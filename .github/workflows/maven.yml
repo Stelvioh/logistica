@@ -22,9 +22,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Compilar com o Maven
-      run: mvn clean install
-
     - name: Configurar Docker Buildx
       uses: docker/setup-buildx-action@v1
 
