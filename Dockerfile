@@ -1,5 +1,5 @@
-# Usa a imagem oficial do OpenJDK 17 no Alpine Linux como base
-FROM openjdk:17-alpine
+# Usa a imagem oficial do OpenJDK 17 no Alpine Linux como base para amd64
+FROM adoptopenjdk:17-jdk-hotspot-bionic
 
 # Define o diretório de trabalho no contêiner
 WORKDIR /app
