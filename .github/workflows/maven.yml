@@ -25,7 +25,7 @@ jobs:
       run: mvn clean install -DskipTests
 
     - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@main
+      uses: SonarSource/sonarqube-scan-action@master
       with:
         args: >
           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
