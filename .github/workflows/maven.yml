@@ -24,7 +24,6 @@ jobs:
     - name: Build project
       run: mvn clean install -DskipTests
 
-
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@main
       with:
