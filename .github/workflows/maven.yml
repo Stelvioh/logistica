@@ -26,11 +26,10 @@ jobs:
 
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@master
-      with:
+      env:
         args: >
-          -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-          -Dsonar.host.url=URL_DO_SEU_SONARQUBE
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: URL_DO_SEU_SONARQUBE
+          SONAR_TOKEN : ${{ secrets.SONAR_TOKEN }}
 
 
     - name: Configurar Docker Buildx
