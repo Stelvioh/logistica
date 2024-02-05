@@ -27,9 +27,8 @@ jobs:
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@master
       env:
-        args: >
-          SONAR_HOST_URL: URL_DO_SEU_SONARQUBE
-          SONAR_TOKEN : ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: URL_DO_SEU_SONARQUBE
+        SONAR_TOKEN : ${{ secrets.SONAR_TOKEN }}
 
 
     - name: Configurar Docker Buildx
