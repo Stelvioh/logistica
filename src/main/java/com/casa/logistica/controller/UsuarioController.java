@@ -21,7 +21,7 @@ public class UsuarioController {
     }
 
     // Método criar um novo usuário atraves do objeto usuario
-    // usar responsebody para retornar o objeto criado
+    // usar response body para retornar o objeto criado 
     @PostMapping("/criar")
     public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario) {
         // Aqui chamamos o serviço de criação de usuário
