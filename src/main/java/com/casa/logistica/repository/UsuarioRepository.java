@@ -11,9 +11,7 @@ import java.util.List;
 // os dados no banco de dados
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
-
-    //Buscar todos os usuarios
+    //Buscar todos os usuarios em uma lista
     List<Usuario> findAll();
-
 }
 
