@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.casa.logistica.domain.Usuario;
 
+import java.util.List;
+
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -16,9 +18,13 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping("/")
-    public String usuario() {
-        return "usuarios";
+    public ResponseEntity<List<Usuario>> buscarUsuarios() {
+        // Aqui chamamos o serviço de busca de usuários
+        List<Usuario> usuarios = usuarioService.buscarUsuarios();
+        // Aqui retornamos a lista de usuários com o status 200
+        return ResponseEntity.status(200).body(usuarios);
     }
+
 
     // Método criar um novo usuário atraves do objeto usuario
     // usar response body para retornar o objeto criado 
