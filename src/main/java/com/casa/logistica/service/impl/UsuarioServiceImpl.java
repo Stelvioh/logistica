@@ -7,7 +7,7 @@ import com.casa.logistica.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
 
 import static java.time.LocalDate.now;
 
@@ -29,6 +29,11 @@ public class UsuarioServiceImpl implements UsuarioService{
         }
         return usuarioRepository.save(usuario);
 
+    }
+
+    @Override
+    public List<Usuario> buscarUsuarios(){
+        return usuarioRepository.findAll();
     }
 
 
