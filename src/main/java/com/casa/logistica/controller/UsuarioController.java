@@ -20,9 +20,7 @@ public class UsuarioController {
     //Buscar todos os usuarios
     @GetMapping("/")
     public ResponseEntity<List<Usuario>> buscarUsuarios() {
-        // Aqui chamamos o serviço de busca de usuários
         List<Usuario> usuarios = usuarioService.buscarUsuarios();
-        // Aqui retornamos a lista de usuários com o status 200
         return ResponseEntity.status(200).body(usuarios);
     }
 
