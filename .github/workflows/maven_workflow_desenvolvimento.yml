@@ -24,7 +24,5 @@ jobs:
       - name: Build project
         run: mvn clean install -DskipTests
 
-  analise:
-    needs: build
-    runs-on: ubuntu-latest
+
 
