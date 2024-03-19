@@ -1,13 +1,28 @@
-name: Java CI with Maven and Docker
+name: Java CI with Maven
 
 on:
   push:
-    branches: [ "desenvolvimento" ]
+    branches: [ "main", "desenvolvimento" ]
   pull_request:
-    branches: [ "desenvolvimento" ]
+    branches: [ "main", "desenvolvimento" ]
 
 jobs:
+  checkout_code:
+    runs-on: ubuntu-latest
+
+    outputs:
+      timestamp: ${{ steps.set_output.outputs.timestamp }}
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Set output
+        id: set_output
+        run: echo "::set-output name=timestamp::$(date +%s)"
+
   build:
+    needs: checkout_code
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +38,3 @@ jobs:
 
       - name: Build project
         run: mvn clean install -DskipTests
-
-
-
