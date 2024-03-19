@@ -7,7 +7,7 @@ on:
     branches: [ "desenvolvimento" ]
 
 jobs:
-  construir:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: mvn clean install -DskipTests
 
-  analise:
+  cache:
     needs: build
     runs-on: ubuntu-latest
 
