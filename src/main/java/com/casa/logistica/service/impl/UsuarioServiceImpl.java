@@ -23,7 +23,6 @@ public class UsuarioServiceImpl implements UsuarioService{
     public Usuario criarUsuario(Usuario usuario) {
 
         //persistir o usuario no banco de dados a partir do repositorio
-        //valida usuario maior de idade
         if (usuario.getDataNascimento().getYear() > LocalDate.now().getYear() - 18) {
             throw new RuntimeException("Usuario menor de idade");
         }
